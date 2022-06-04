@@ -1,12 +1,14 @@
- ja:
-    enums:
-      order:
-        payment_method:
-          credit_card: "クレジットカード"
-          transfer: "銀行振込"
+ ja: # 日本語の設定を行う
+    enums: # enumの設定を行う
+      order: #モデル名
+        payment_method: # カラム名（payment_methodカラムに対して）
+          credit_card: "クレジットカード" #enumで番号と紐付けた要素
+          transfer: "銀行振込" # 要素の数だけ追加する
+          
         is_active:
           payment_waiting: "入金待ち"
           payment_confirmation: "入金確認"
           in_production: "製作中"
           reparing_delivery: "発送準備中"
           elivered: "発送済み"
+        

@@ -9,6 +9,7 @@ class Admin::GenresController < ApplicationController
   end
 
   def update
+    @genres = Genre.all
     @genre = Genre.find(params[:id])
     if @genre.update(genre_params)
       flash[:notice] = "変更内容を更新しました。"

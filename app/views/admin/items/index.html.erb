@@ -1,2 +1,13 @@
-<h1>Admin::Items#index</h1>
-<p>Find me in app/views/admin/items/index.html.erb</p>
+<h4>商品一覧</h4>
+<% @items.each do |item| %>
+<table>
+  <tr>
+    <th>タイトル</th>
+  </tr>
+</table>
+
+
+  <p>画像</p>
+  <%= image_tag list.image, size: "200x200" %>
+
+<% end %>

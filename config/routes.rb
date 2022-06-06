@@ -10,13 +10,10 @@ Rails.application.routes.draw do
   }
 
   namespace :admin do
-    resources :genres,only: [:index,:create,:edit,:update]
+    resources :genres, only: [:index,:create,:edit,:update]
+    resources :items, only: [:index, :new, :show, :edit]
     get 'homes/top'
     get 'orders/show'
-    get 'items/index'
-    get 'items/new'
-    get 'items/show'
-    get 'items/edit'
     get 'customers/index'
     get 'customers/show'
     get 'customers/edit'

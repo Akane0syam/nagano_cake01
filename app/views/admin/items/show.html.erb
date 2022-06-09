@@ -1,12 +1,17 @@
-<h3>商品詳細</h3>
-
-<tbody>
-  <th>
-    <tr>商品名</tr><br>
-    <tr>商品説明</tr><br>
-    <tr>ジャンル</tr><br>
-    <tr>税抜価格</tr><br>
-  </th>
-  <br>
-  <%=link_to '編集する', edit_admin_item_path, class: "btn btn-success" %>
-</tbody>
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <div class="col-md-8 offset-md-1">
+     <h3>商品詳細</h3>
+      <tbody>
+        <th>
+          <tr>商品名</tr><br>
+          <tr>商品説明</tr><br>
+          <tr>ジャンル</tr><br>
+          <tr>税抜価格</tr><br>
+        </th>
+        <br>
+        <%=link_to '編集する', edit_admin_item_path, class: "btn btn-success" %>
+      </tbody>
+    </div>
+  </div>
+</div>

@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
-
-
-
+root to: 'public/homes#top'
   # admin
   # 管理者用
   # URL /admin/sign_in ...

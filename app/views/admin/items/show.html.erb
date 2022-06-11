@@ -1,14 +1,19 @@
-<div class="container px-5 px-sm-0">
+<div class="container">
   <div class="row">
-    <div class="col-md-8 offset-md-1">
-     <h3>商品詳細</h3>
+    <div class="col-sm-12">
+     <h4>商品詳細</h4>
       <tbody>
-        <th>
-          <tr>商品名</tr><br>
-          <tr>商品説明</tr><br>
-          <tr>ジャンル</tr><br>
-          <tr>税抜価格</tr><br>
-        </th>
+        <tr>
+          <th>商品名</th>
+          <td><%= @items.name %></td><br>
+          <th>商品説明</th>
+          <td><%= @items.introduction %></td><br>
+          <th>ジャンル</th>
+          <td><%= @items.genre_id %></td><br>
+          <th>税抜価格<br>(税抜価格)</th>
+          <td><%= @items.price %></td><br>
+          <th>販売ステータス</th>
+        </tr>
         <br>
         <%=link_to '編集する', edit_admin_item_path, class: "btn btn-success" %>
       </tbody>

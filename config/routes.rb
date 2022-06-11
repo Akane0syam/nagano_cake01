@@ -9,7 +9,8 @@ root to: 'public/homes#top'
 
   namespace :admin do
     resources :genres, only: [:index,:create,:edit,:update]
-    resources :items
+    resources :items, only: [:index, :new, :show, :edit, :create, :update]
+    patch '/admin/items/:id/edit', to: "admin/items#edit"
     get 'homes/top'
     get 'orders/show'
     get 'customers/index'

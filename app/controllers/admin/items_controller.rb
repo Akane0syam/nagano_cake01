@@ -20,6 +20,14 @@ class Admin::ItemsController < ApplicationController
   end
 
   def update
+    @item = Item.find(params[:id])
+    if @item.update(item_params)
+      flash[:notice] = "変更内容を更新しました。"
+      redirect_to admin_item_path
+    else
+      flash[:alert] = "変更内容に不備があります。"
+      render "edit"
+    end
   end
 
   private

@@ -1,22 +1,29 @@
-
-<h4>商品一覧</h4>
-<thread>
-  <tr>
-    <th>商品ID</th>
-    <th>商品名</th>
-    <th>税抜価格</th>
-    <th>ジャンル</th>
-    <th>ステータス</th>
-  </tr>
-</thread>
-<tbody>
-  <% @items.each do |item| %>
-    <tr>
-      <td><%= item.id %></td>
-      <td><%= link_to item.name,admin_item_path(item.id) %></td>
-      <td><%= item.price %></td>
-      <td><%= item.genre_id %></td>
-    </tr>
-  <% end %>
-</tbody>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <h4>商品一覧</h4>
+      <table class="table">
+        <thread>
+          <tr>
+            <th>商品ID</th>
+            <th>商品名</th>
+            <th>税抜価格</th>
+            <th>ジャンル</th>
+            <th>ステータス</th>
+          </tr>
+        </thread>
+        <tbody>
+          <% @items.each do |item| %>
+            <tr>
+              <th><%= item.id %></th>
+              <th><%= link_to item.name,admin_item_path(item.id) %></th>
+              <th><%= item.price %></th>
+              <th><%= item.genre_id %></th>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
 

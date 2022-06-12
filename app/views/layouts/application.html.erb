@@ -5,15 +5,42 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-
   </head>
 
   <body>
-
+    <head>
+      <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
+         <%= link_to root_path, class: "navbar-brand" do %>
+            <span>LOGO</span>
+          <% end %>
+          <div class="navbar-collapse collapse show" id="navbarNavDropdown">
+            <ul class="navbar-nav ml-auto">
+              <li>
+                <%= link_to public_homes_about_path do %>
+                  <button class="btn btn-sm btn-outline-secondary">About</button>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to public_items_index_path do %>
+                  <button class="btn btn-sm btn-outline-secondary">商品一覧</button>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_customer_registration_path do %>
+                  <button class="btn btn-sm btn-outline-secondary">新規登録</button>
+                <% end %>
+              </li>
+              <li>
+                <%= link_to new_customer_session_path do %>
+                  <button class="btn btn-sm btn-outline-secondary">ログイン</button>
+                <% end %>
+              </li>
+            </ul>
+          </div>
+      </nav>
+    </head>
     <%= yield %>
   </body>
 </html>

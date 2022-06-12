@@ -10,11 +10,9 @@ root to: 'public/homes#top'
   namespace :admin do
     resources :genres, only: [:index,:create,:edit,:update]
     resources :items, only: [:index, :new, :show, :edit, :create, :update]
+    resources :customers, only: [:index, :show, :edit, :update]
     get 'homes/top'
     get 'orders/show'
-    get 'customers/index'
-    get 'customers/show'
-    get 'customers/edit'
   end
 
   #customers

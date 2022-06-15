@@ -19,12 +19,33 @@
             <ul class="navbar-nav ml-auto">
               <% if customer_signed_in? %>
                 <li>
+                  <%= link_to public_customers_show_path do %>
+                    <button class="btn btn-sm btn-outline-secondary">マイページ</button>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to public_items_index_path do %>
+                    <button class="btn btn-sm btn-outline-secondary">商品一覧</button>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to public_cart_items_index_path do %>
+                    <button class="btn btn-sm btn-outline-secondary">カート</button>
+                  <% end %>
+                </li>
+                <li>
+                  <%= link_to destroy_admin_session_path, method: :delete do %>
+                    <button class="btn btn-sm btn-outline-secondary">ログアウト</button>
+                  <% end %>
+                </li>
+              <% elsif admin_signed_in? %>
+                <li>
                   <%= link_to admin_items_path do %>
                     <button class="btn btn-sm btn-outline-secondary">商品一覧</button>
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to admin_customers_indext_path do %>
+                  <%= link_to admin_customers_path do %>
                     <button class="btn btn-sm btn-outline-secondary">会員一覧</button>
                   <% end %>
                 </li>
@@ -60,7 +81,7 @@
                   <% end %>
                 </li>
                 <li>
-                  <%= link_to new_admin_session_path do %>
+                  <%= link_to new_customer_session_path do %>
                     <button class="btn btn-sm btn-outline-secondary">ログイン</button>
                   <% end %>
                 </li>

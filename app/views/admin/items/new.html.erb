@@ -11,19 +11,16 @@
     <%= f.text_area :introduction %><br>
 
     <tr>ジャンル</tr>
-    <%= f.text_field :genre_id %><br>
-
+    <%= f.collection_select :genre_id, Genre.all, :id, :name, :prompt => "--選択してください--", class: "form-select" %>
+    <br>
     <tr>税抜価格</tr>
     <%= f.text_field :price %><br>
 
     <tr>販売ステータス</tr>
-
-        <%= f.label :is_active, "販売中" %>
-        <%= f.radio_button :is_active, true %>
-        <%= f.label :is_active, "販売停止中"  %>
-        <%= f.radio_button :is_active, false  %>
-
-
+    <%= f.label :is_active, "販売中" %>
+    <%= f.radio_button :is_active, true %>
+    <%= f.label :is_active, "販売停止中"  %>
+    <%= f.radio_button :is_active, false  %>
 
     <br>
 

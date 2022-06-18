@@ -1,2 +1,21 @@
-<h1>Public::Orders#new</h1>
-<p>Find me in app/views/public/orders/new.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-10">
+      <h4>注文情報入力</h4>
+      <%= form_with model: @order, url: public_orders_confirm_path do |f| %>
+        <table class="table">
+          <tbody>
+            <h5>支払方法</h5>
+            <%= f.radio_button :payment_method, "credit_card" %>
+            <%= f.label :payment_method, "クレジットカード" %>
+            <br>
+            <%= f.radio_button :payment_method, "transfer" %>
+            <%= f.label :payment_method, "銀行振込" %>
+            <h5>お届け先</h5>
+
+          </tbody>
+        </table>
+      <% end %>
+    </div>
+  </div>
+</div>

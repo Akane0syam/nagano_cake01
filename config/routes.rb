@@ -23,19 +23,12 @@ Rails.application.routes.draw do
     sessions: 'public/sessions'
   }
   namespace :public do
+    resources :customers, only: [:show, :edit, :quit, :update]
+    resources :orders, only: [:new, :confirm, :complete, :index, :show, :update]
+    resources :items, only: [:index, :show, :update]
     get 'registrations/new'
-    get 'orders/new'
-    get 'orders/confirm'
-    get 'orders/complete'
-    get 'orders/index'
-    get 'orders/show'
-    get 'items/index'
-    get 'items/show'
     get 'homes/top'
     get 'homes/about'
-    get 'customers/show'
-    get 'customers/edit'
-    get 'customers/quit'
     get 'cart_items/index'
     get 'addresses/index'
     get 'addresses/edit'

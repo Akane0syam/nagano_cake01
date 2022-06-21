@@ -2,6 +2,13 @@
   <div class="row">
     <div class="col-sm-8">
      <h4>商品詳細</h4>
+      <div class="col-lg text-center mb-5">
+        <% if @item.image.attached? %>
+          <%= image_tag @item.image, size: "300x300" %>
+        <% else %>
+          <%= image_tag 'no_image', size: "300x300" %>
+        <% end %>
+      </div>
       <tbody>
         <tr>
           <th>商品名</th>

@@ -18,7 +18,7 @@
       </table>
     </div>
     <div class="col-sm-5">
-      <%= image_tag @item.image, size: "200x200" %>
+      <%= image_tag @item.image, size: "300x300" %>
     </div>
      <div class="col-sm-5">
       <tr>
@@ -31,6 +31,10 @@
         <td>
           ¥<%= @item.price %>(税込)
         </td>
+        <%= form_with model: @item, url: admin_item_path(@item.id), method: :patch do |f| %>
+          <%= f.select :amount, *[1..9] %>
+          <%= f.submit 'カートに入れる', class: "btn btn-success"%>
+        <% end %>
       </tr>
     </div>
   </div>

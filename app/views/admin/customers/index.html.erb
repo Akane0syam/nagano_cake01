@@ -14,7 +14,7 @@
           <% @customers.each do |customer| %>
             <tr>
               <th><%= customer.id %></th>
-              <th><%= link_to customer.name, admin_customers_show(customer.id) %></th>
+              <th><%= link_to @customers.name, admin_customer_path(customer.id) %></th>
               <th><%= customer.email %></th>
               <th><%= customer.is_deleted %></th>
             </tr>

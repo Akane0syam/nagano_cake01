@@ -2,8 +2,43 @@
   <div class="row">
     <div class="col-sm-12">
       <h4><%  @customer %>さんの会員情報編集</h4>
+      <%= form_with model: @customer, url: public_customer_path(@customer.id), method: :patch do |f| %>
       <tbody>
+        <div class="field">
+          <%= f.label "名前" %>
+          <%= f.label "(姓)" %>
+          <%= f.text_field :last_name %>
+          <%= f.label "(名)" %>
+          <%= f.text_field :first_name %>
+        </div>
+        <div class="field">
+          <%= f.label "フリガナ" %>
+          <%= f.label "(セイ)" %>
+          <%= f.text_field :last_name_kana %>
+          <%= f.label "(メイ)" %>
+          <%= f.text_field :first_name_kana %>
+        </div>
+        <div class="field">
+          <%= f.label "メールアドレス" %>
+          <%= f.email_field :email %>
+        </div>
+        <div class="field">
+          <%= f.label "郵便番号(ハイフンなし)" %>
+          <%= f.text_field :postal_code %>
+        </div>
+        <div class="field">
+          <%= f.label "住所" %>
+          <%= f.text_field :address, :size => "60" %>
+        </div>
+        <div class="field">
+          <%= f.label "電話番号(ハイフンなし)" %>
+          <%= f.text_field :telephone_number %>
+        </div>
+        <div class="actions">
+          <%= f.submit "編集内容を保存", class: "btn btn-success" %>
+        </div>
       </tbody>
+      <% end %>
     </div>
   </div>
 </div>

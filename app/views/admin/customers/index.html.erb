@@ -16,7 +16,11 @@
               <th><%= customer.id %></th>
               <th><%= link_to @customers.name, admin_customer_path(customer.id) %></th>
               <th><%= customer.email %></th>
-              <th><%= customer.is_deleted %></th>
+                <% if customer.is_deleted == true%>
+                 <td class="text-secondary">退会済み</td>
+                <% else %>
+                 <td class="text-success">有効</td>
+                <% end %>
             </tr>
           <% end %>
         </tbody>

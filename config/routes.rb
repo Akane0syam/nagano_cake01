@@ -26,12 +26,11 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :quit, :update]
     resources :orders, only: [:new, :confirm, :complete, :index, :show, :update]
     resources :items, only: [:index, :show, :update]
+    resources :cart_items, only: [:index, :update]
+    resources :addresses, only: [:index, :edit, :create, :update]
     get 'registrations/new'
     get 'homes/top'
     get 'homes/about'
-    get 'cart_items/index'
-    get 'addresses/index'
-    get 'addresses/edit'
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

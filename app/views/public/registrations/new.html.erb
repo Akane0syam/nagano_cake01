@@ -11,13 +11,13 @@
           <%= f.label "(名)" %>
           <%= f.text_field :first_name, :placeholder => "道子" %>
         </div>
-         <div class="field">
+        <div class="field">
           <%= f.label "フリガナ" %>
           <%= f.label "(セイ)" %>
           <%= f.text_field :last_name_kana, :placeholder => "レイワ" %>
           <%= f.label "(メイ)" %>
           <%= f.text_field :first_name_kana, :placeholder => "ミチコ" %>
-         </div>
+        </div>
         <div class="field">
           <%= f.label "メールアドレス" %>
           <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "sample@example.com" %>
@@ -29,6 +29,10 @@
         <div class="field">
           <%= f.label "住所" %>
           <%= f.text_field :address, :size => "60", :placeholder => "東京都渋谷区代々木神園町000" %>
+        </div>
+        <div class="field">
+          <%= f.label "電話番号(ハイフンなし)" %>
+          <%= f.text_field :telephone_number, :placeholder => "0000000" %>
         </div>
         <div class="field">
           <%= f.label "パスワード" %>

@@ -5,7 +5,7 @@
       <table>
         <tr>
           <th>会員ID</th>
-          <td></td>
+          <td><%= @customer.id%></td>
         </tr>
         <tr>
           <th>氏名</th>
@@ -13,27 +13,23 @@
         </tr>
         <tr>
           <th>フリガナ</th>
-          <td></td>
+          <td><%= @customer.address%></td>
         </tr>
         <tr>
           <th>郵便番号</th>
-          <td></td>
+          <td><%= @customer.postal_code %></td>
         </tr>
         <tr>
           <th>住所</th>
-          <td></td>
+          <td><%= @customer.address %></td>
         </tr>
         <tr>
           <th>電話番号</th>
-          <td></td>
+          <td><%= @customer.telephone_number %></td>
         </tr>
         <tr>
           <th>メールアドレス</th>
-          <td></td>
-        </tr>
-        <tr>
-          <th>会員ステータス</th>
-          <td></td>
+          <td><%= @customer.email %></td>
         </tr>
       </tbale>
     </div>

@@ -26,7 +26,7 @@ Rails.application.routes.draw do
     resources :customers, only: [:show, :edit, :quit, :update]
     resources :orders, only: [:new, :confirm, :complete, :index, :show, :update]
     resources :items, only: [:index, :show, :update]
-    resources :cart_items, only: [:index, :update]
+    resources :cart_items, only: [:index, :update, :create, :destroy]
     resources :addresses, only: [:index, :edit, :create, :update]
     get 'registrations/new'
     get 'homes/top'

@@ -1,20 +1,22 @@
 class Public::CartItemsController < ApplicationController
-  def index
+  before_action :setup_cart_item!, only: %i[add_item update_item delete_item]
+
+  def index  # カート内アイテムの表示
     @cart_items = current_customer.cart_items.includes([:customer_id])
+    #includes=関連するテーブルをまとめて取得
     @cart_item = CartItem.find(params[:item_id])
     #@total_price = Item.total_price
   end
 
-  def create
-    binding.pry
-    @item = Item.find(cart_item_params[:item_id])
+  def create # アイテムの追加
+    @cart_item = CartItem.new(cart_item_params)
   end
 
-  def update
-    @cart_item = CartItem.find(params[:id])
+  def update # アイテムの更新
+
   end
 
-  def destroy
+  def destroy # アイテムの削除
 
   end
 

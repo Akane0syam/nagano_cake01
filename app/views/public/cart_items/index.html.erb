@@ -10,11 +10,11 @@
           <th>小計</th>
         </thead>
         <tbody>
-          <% @cart_item.each do |cart_item| %>
+          <% @cart_items.each do |cart_item| %>
             <tr>
               <td><%= cart_item.item.with_tax_price%></td>
               <td><%= cart_item.subtotal%></td>
-             <% #@total_price +=  (cart_item.price * 1.1).floor * cart_item.amount %>
+             <% @total +=  (cart_item.price * 1.1).floor * cart_item.amount %>
             </tr>
           <% end %>
         </tbody>

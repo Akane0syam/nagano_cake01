@@ -31,8 +31,9 @@
         <td>
           ¥<%= @item.price %>(税込)
         </td>
-        <%= form_with model: @item, url: public_cart_items_path do |f| %>
+        <%= form_with model:@cart_item, url:public_cart_items_path, method: :POST do |f| %>
           <%= f.select :amount, *[1..9] %>
+          <%= f.hidden_field :item_id , value: @item.id %>
           <%= f.submit 'カートに入れる', class: "btn btn-success"%>
         <% end %>
       </tr>

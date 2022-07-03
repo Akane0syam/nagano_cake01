@@ -21,6 +21,9 @@
                 <% end %>
               </td>
               <td><%= cart_item.subtotal%></td>
+              <td>
+                <%= link_to "削除する", public_cart_item_path(cart_item.id), method: :delete, data: { confirm: '本当に消しますか?' }, class: "btn btn-danger" %>
+              </td>
             </tr>
           <% end %>
         </tbody>

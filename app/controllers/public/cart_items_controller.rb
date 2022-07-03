@@ -21,7 +21,9 @@ class Public::CartItemsController < ApplicationController
   end
 
   def destroy # アイテムの削除
-
+    @cart_item = CartItem.find(params[:id])
+    @cart_item.destroy
+    redirect_to public_cart_items_path
   end
 
     private

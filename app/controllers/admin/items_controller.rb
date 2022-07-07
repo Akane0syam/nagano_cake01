@@ -18,7 +18,7 @@ class Admin::ItemsController < ApplicationController
     if @item.update(item_params)
       redirect_to admin_item_path(@item)
     else
-      render "edit"
+      redirect_to admin_items_path
     end
   end
 
@@ -27,7 +27,7 @@ class Admin::ItemsController < ApplicationController
     if @item.save
       redirect_to admin_item_path(@item.id)
     else
-      render :new
+      redirect_to admin_items_path
     end
   end
 

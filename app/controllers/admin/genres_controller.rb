@@ -25,7 +25,7 @@ class Admin::GenresController < ApplicationController
     @genre.save
     @genres = Genre.all
     # redirect_to admin_genres_path
-    redirect_to :index
+    redirect_to admin_genres_path
   end
 
    private

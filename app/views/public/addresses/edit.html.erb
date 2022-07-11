@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-sm-10">
     <h1>配送先編集</h1>
-    <%= form_with model: @address, url: public_addresses_path, method: :patch do |f| %>
+    <%= form_with model: @address, url: public_address_path, method: :patch do |f| %>
       <%= f.label :郵便番号 %>
       <%= f.text_field :postal_code %>
       
@@ -12,7 +12,7 @@
       <%= f.label :宛名 %>
       <%= f.text_field :name %>
       
-      <%= f.submit '変更内容を保存' %>
+      <%= f.submit '変更内容を保存', class: "btn btn-success" %>
     <% end %>
     </div>
   </div>

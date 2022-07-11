@@ -1,8 +1,8 @@
 <div class="container">
   <div class="row">
     <div class="col-sm-12">
-      <h4><%  @customer %>さんの会員情報編集</h4>
       <%= form_with model: @customer, url: public_customer_path(@customer.id), method: :patch do |f| %>
+      <h4><%  @customer.last_name %>さんの会員情報編集</h4>
       <tbody>
         <div class="field">
           <%= f.label "名前" %>

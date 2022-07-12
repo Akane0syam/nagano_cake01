@@ -12,7 +12,9 @@
         <tbody>
           <% @cart_items.each do |cart_item| %>
             <tr>
-              <td><%= cart_item.item.name %></td>
+              <td>
+                <%= cart_item.item.name %>
+              </td>
               <td><%= cart_item.item.with_tax_price%></td>
               <td>
                 <%= form_with model:cart_item, url:public_cart_item_path(cart_item), method: :PATCH do |f| %>
@@ -28,6 +30,14 @@
           <% end %>
         </tbody>
       </table>
+      <table>
+          <tr>
+            <%= link_to "買い物を続ける", public_items_path, class: "btn btn-primary" %>
+          </tr>
+          <tr>
+            
+          </tr>
+        </table>
     </div>
   </div>
 </div>

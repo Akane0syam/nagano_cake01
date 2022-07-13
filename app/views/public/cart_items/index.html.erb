@@ -3,6 +3,9 @@
     <div class="col-sm-12">
       <h2>ショッピングカート</h2>
       <table>
+        <%= link_to "カートを空にする", destroy_all_public_cart_items_path, method: :delete, data: { confirm: "カートを空にしますか?"}, class: "btn btn-danger" %>
+      </table>
+      <table>
         <thead>
           <th>商品名</th>
           <th>単価</th>
@@ -29,15 +32,12 @@
             </tr>
           <% end %>
         </tbody>
-      </table>
+      </table><br>
       <table>
           <tr>
             <%= link_to "買い物を続ける", public_items_path, class: "btn btn-primary" %>
           </tr>
-          <tr>
-            
-          </tr>
-        </table>
+      </table>
     </div>
   </div>
 </div>

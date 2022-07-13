@@ -25,6 +25,13 @@ class Public::CartItemsController < ApplicationController
     @cart_item.destroy
     redirect_to public_cart_items_path
   end
+  
+  
+  def destroy_all #カート内全て削除
+    CartItem.destroy_all
+    flash[:notice] = "全部消しただなも"
+    redirect_to root_path
+  end
 
     private
 

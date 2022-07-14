@@ -1,5 +1,6 @@
 class Public::OrdersController < ApplicationController
   def new
+    @addresses = Address.all
     @order = Order.new
   end
 
@@ -15,6 +16,9 @@ class Public::OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+  end
+  
+  def create
   end
 
     private

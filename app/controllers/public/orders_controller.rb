@@ -80,8 +80,8 @@ class Public::OrdersController < ApplicationController
       end
     # 最後にカートを全て削除する
     @cart_items.destroy_all
-
-    redirect_to public_orders_complete_path
+    
+    redirect_to public_orders_confirm_path
   end
   
 

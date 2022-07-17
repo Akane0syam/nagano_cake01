@@ -24,7 +24,12 @@ Rails.application.routes.draw do
   }
   namespace :public do
   resources :customers, only: [:show, :edit, :quit, :update]
-  resources :orders, only: [:new, :confirm, :complete, :index, :show, :update, :create]
+  resources :orders, only: [:new, :index, :show, :update, :create] do
+    collection do
+      get :complete
+      get :confirm
+    end
+  end
   resources :items, only: [:index, :show, :update]
   resources :cart_items, only: [:index, :update, :create, :destroy] do
     collection do
@@ -35,6 +40,7 @@ Rails.application.routes.draw do
   get 'registrations/new'
   get 'homes/top'
   get 'homes/about'
+  
   end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

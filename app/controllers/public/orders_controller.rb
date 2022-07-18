@@ -14,12 +14,13 @@ class Public::OrdersController < ApplicationController
   def show
     @order = Order.find(params[:id])
     @order_details = @order.order_details
+    @order_detail = OrderDetail.find(@order.id)
+    @item = Item.find(@order_detail.item_id)
   end
 
   def confirm
     @order = Order.new(order_params)
     @cart_items = current_customer.cart_items
-
     @order = Order.new(
       customer: current_customer,
       payment_method: params[:order][:payment_method])
@@ -67,21 +68,18 @@ class Public::OrdersController < ApplicationController
     if params[:order][:ship] =="1"
       current_customer.address.create(address_params)
     end
-
        # カート商品の情報を注文履歴に移動させる
     @cart_items = current_customer.cart_items
     @cart_items.each do |cart_item|
       @order_detail = OrderDetail.new
       @order_detail.item_id = cart_item.item_id
       @order_detail.order_id = @order.id
-      #@order_detail.count = cart_item.count
-      #@order_detail.price = cart_item.item.price * cart_item.count 
       @order_detail.save
       end
     # 最後にカートを全て削除する
     @cart_items.destroy_all
     
-    redirect_to public_orders_confirm_path
+    redirect_to confirm_public_orders_path
   end
   
 

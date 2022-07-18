@@ -26,8 +26,8 @@ Rails.application.routes.draw do
   resources :customers, only: [:show, :edit, :quit, :update]
   resources :orders, only: [:new, :index, :show, :update, :create] do
     collection do
+      post :confirm
       get :complete
-      get :confirm
     end
   end
   resources :items, only: [:index, :show, :update]

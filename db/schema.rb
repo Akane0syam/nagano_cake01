@@ -109,22 +109,22 @@ ActiveRecord::Schema.define(version: 2022_06_06_121449) do
   create_table "order_details", force: :cascade do |t|
     t.integer "item_id"
     t.integer "order_id"
-    t.integer "tax_price"
-    t.integer "amount"
-    t.integer "making_status", default: 0
+    t.integer "tax_price"#購入時価格(税込)
+    t.integer "amount"#数量
+    t.integer "making_status", default: 0#製造ステータス
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
 
   create_table "orders", force: :cascade do |t|
     t.integer "customer_id"
-    t.string "delivery_postal_code"
-    t.string "delivery_address"
-    t.string "delivery_name"
-    t.integer "payment_method", default: 0
+    t.string "delivery_postal_code"#配送先郵便番号
+    t.string "delivery_address"#配送先住所
+    t.string "delivery_name"#配送先氏名
+    t.integer "payment_method", default: 0#支払方法
     t.integer "is_active", default: 0
-    t.integer "amount_billed"
-    t.integer "postage"
+    t.integer "amount_billed"#請求金額
+    t.integer "postage"#送料
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

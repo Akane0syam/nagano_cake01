@@ -23,13 +23,15 @@ Rails.application.routes.draw do
   sessions: 'public/sessions'
   }
   namespace :public do
+    post 'orders/confirm' => 'orders#confirm'
   resources :customers, only: [:show, :edit, :quit, :update]
   resources :orders, only: [:new, :index, :show, :update, :create] do
     collection do
-      post :confirm
       get :complete
     end
+  
   end
+  
   resources :items, only: [:index, :show, :update]
   resources :cart_items, only: [:index, :update, :create, :destroy] do
     collection do

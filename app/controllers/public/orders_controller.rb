@@ -19,7 +19,7 @@ class Public::OrdersController < ApplicationController
       current_customer.address.create(address_params)
     end
        # カート商品の情報を注文履歴に移動させる
-       binding.pry
+      
     @cart_items = current_customer.cart_items
     @cart_items.each do |cart_item|
       @order_detail = OrderDetail.new

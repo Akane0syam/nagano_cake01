@@ -7,9 +7,7 @@ class Item < ApplicationRecord
   belongs_to :genre
 
 
-def favorited_by?(user)
-    favorites.exists?(user_id: user.id)
-end
+
   ## 消費税を求めるメソッド
 def with_tax_price
     (price * 1.1).floor

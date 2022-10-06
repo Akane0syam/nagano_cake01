@@ -30,7 +30,7 @@ class Public::CartItemsController < ApplicationController
   
   def destroy_all #カート内全て削除
     CartItem.destroy_all
-    flash[:notice] = "全部消しただなも"
+    flash[:notice] = "全消え"
     redirect_to root_path
   end
 
